@@ -1,0 +1,232 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container for the dashboard */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%; /* Ensure container takes full width */
+    max-width: 1600px; /* Increase max width for larger space */
+    margin: 0 auto;
+}
+
+/* Heading styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #0044cc;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #0077ff;
+}
+
+/* Grid layout for the dashboard */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Card styles */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%; /* Full width of its container */
+    box-sizing: border-box;
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Visualization titles */
+.card h2 {
+    margin-bottom: 10px;
+    color: #0056b3;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+/* Ensure no extra margin on h2 within the map-table-container card */
+.map-table-container h2 {
+    margin: 0; /* Remove default margin */
+    padding: 0px 0; /* Adjust padding if needed */
+    color: #0056b3; /* Color for the heading */
+    border-bottom: 2px solid #e0e0e0; /* Border styling */
+    height : 30px
+}
+
+
+/* Layout for visualizations */
+.visualizations-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if necessary */
+}
+
+/* Adjust card widths */
+.visualizations-row .card {
+    flex: 1;
+    min-width: 0; /* Allow cards to adjust width */
+}
+
+/* Make sure the first two cards are larger */
+.visualizations-row .card:nth-child(1),
+.visualizations-row .card:nth-child(2) {
+    flex: 2; /* Larger width for these cards */
+}
+
+.visualizations-row .card:nth-child(3),
+.visualizations-row .card:nth-child(4) {
+    flex: 1; /* Regular width for remaining cards */
+}
+
+/* Map and table layout */
+.map-table-container {
+    display: flex;
+    gap: 20px;
+    width: 100%; /* Full width of its container */
+}
+
+/* Adjust map container */
+.map-container {
+    flex: 2; /* Make the map-container larger */
+    height: 500px; /* Increase height for better visibility */
+    width: 300px;
+    margin-top : 50px;
+    margin-right: 10px;
+}
+
+.map-container canvas {
+    width: 100%;
+    height: 100%;
+}
+
+/* Adjust table container */
+.table-container {
+    flex: 1;
+}
+
+/* Increase width for daily sales trend */
+.card:nth-child(4) {
+    flex: 2; /* Increase width to make the chart larger */
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #f4f4f4;
+    text-align: left;
+}
+
+/* Visualization specific styles */
+.card:nth-child(2) table td {
+    vertical-align: middle;
+}
+
+.card:nth-child(2) td canvas {
+    width: 100px;
+    height: 30px;
+}
+
+.card:nth-child(3) td canvas {
+    width: 150px;
+    height: 30px;
+}
+
+.card:nth-child(4) canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Scrollbars for tables */
+.card table {
+    overflow-x: auto;
+    display: block;
+}
+
+/* Improved scrollbar */
+.card table::-webkit-scrollbar {
+    height: 8px;
+}
+
+.card table::-webkit-scrollbar-thumb {
+    background-color: #0077ff;
+    border-radius: 4px;
+}
+
+/* Pagination styling */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+/* Horizontal Data Summary Section */
+.data-summary {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center;
+    background-color: #ffffff; /* Background color for the section */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0; /* Margin to space it from other sections */
+    width: 100%; /* Full width of the container */
+}
+
+.data-item {
+    flex: 1; /* Each item takes equal space */
+    text-align: center;
+    padding: 10px;
+}
+
+.data-item span {
+    display: block;
+    margin: 5px 0;
+}
+
+.data-item .icon {
+    font-size: 24px; /* Adjust icon size */
+    color: #0077ff; /* Icon color */
+}
+
+.data-item .number {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.data-item .label {
+    font-size: 0.875rem;
+    color: #666;
+}
